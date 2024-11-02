@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Container, Group, Image } from "@mantine/core";
-import classes from "./Header.module.css";
+import { Group, Image, Button } from "@mantine/core";
 
 const links = [
   { link: "/home", label: "Home" },
@@ -12,30 +11,38 @@ const links = [
 export function Header() {
   const [active, setActive] = useState(links[0].link);
 
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={classes.link}
-      data-active={active === link.link || undefined}
+  const buttons = links.map((link) => (
+    <Button
+      key={link.link}
+      color="orange"
+      size={"xs"}
+      variant={active === link.link ? "filled" : "outline"}
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
       }}
     >
       {link.label}
-    </a>
+    </Button>
   ));
 
   return (
-    <Container className={classes.container}>
+    <Group
+      justify="space-between"
+      w={800}
+      px={5}
+      style={{ backgroundColor: "#000000" }}
+    >
       <Image
+        h={40}
+        w="auto"
+        fit="contain"
         src="./logo_no_text.jpg"
         alt="Company logo"
-        visibleFrom="xs"
-        className={classes.logo}
       ></Image>
-      <Group gap={7}>{items}</Group>
-    </Container>
+      <Group gap={5} justify="flex-end">
+        {buttons}
+      </Group>
+    </Group>
   );
 }
