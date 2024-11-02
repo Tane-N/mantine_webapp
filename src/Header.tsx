@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Group, Burger } from "@mantine/core";
+import { Container, Group, Image } from "@mantine/core";
 import classes from "./Header.module.css";
 
 const links = [
@@ -28,10 +28,14 @@ export function Header() {
   ));
 
   return (
-    <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
-        <Group gap={5}>{items}</Group>
-      </Container>
-    </header>
+    <Container className={classes.container}>
+      <Image
+        src="./logo_no_text.jpg"
+        alt="Company logo"
+        visibleFrom="xs"
+        className={classes.logo}
+      ></Image>
+      <Group gap={7}>{items}</Group>
+    </Container>
   );
 }
