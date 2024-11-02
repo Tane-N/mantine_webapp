@@ -29,7 +29,7 @@ export function Header() {
   return (
     <Group
       justify="space-between"
-      w={800}
+      w={900}
       px={5}
       style={{ backgroundColor: "#000000" }}
     >
