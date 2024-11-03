@@ -42,7 +42,7 @@ export function Header(props: React.PropsWithoutRef<Props>) {
         fit="contain"
         src="./logo_no_text.jpg"
         alt="Company logo"
-      ></Image>
+      />
       <Group gap={5} justify="flex-end">
         {buttons}
       </Group>

@@ -22,6 +22,14 @@ const cards = [
     buttontext: "See More",
     buttonlink: "string",
   },
+  {
+    image:
+      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png",
+    header: "Camera Tenebris",
+    subheader: "Latest Release",
+    buttontext: "Play Now",
+    buttonlink: "string",
+  },
 ];
 
 interface Props {

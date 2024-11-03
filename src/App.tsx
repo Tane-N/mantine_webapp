@@ -12,8 +12,8 @@ export default function App() {
     <MantineProvider theme={theme} defaultColorScheme="dark">
       <Group justify="center">
         <Stack w={1100} justify="flex-start" align="stretch" gap={0}>
-          <Header h={50}></Header>
-          <MainDisplay h={500}></MainDisplay>
+          <Header h={50} />
+          <MainDisplay h={600} />
         </Stack>
       </Group>
     </MantineProvider>
