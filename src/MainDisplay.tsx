@@ -6,28 +6,26 @@ import { DisplayCard } from "./DisplayCard";
 
 const cards = [
   {
-    image:
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
-    header: "Super Portfolio Ball",
-    subheader: "Bear Witness",
-    buttontext: "Play Now",
+    image: "./public/camera_tenebris.jpg",
+    header: "Camera Tenebris",
+    subheader: "Latest Release",
+    buttontext: "View Page",
     buttonlink: "string",
   },
 
   {
-    image:
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
+    image: "./public/mimicologist_placeholder.jpg",
     header: "Mimicologist",
     subheader: "Currently In Development",
     buttontext: "More Info",
     buttonlink: "string",
   },
+
   {
-    image:
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png",
-    header: "Camera Tenebris",
-    subheader: "Latest Release",
-    buttontext: "View Page",
+    image: "./public/super_portfolio_ball.jpg",
+    header: "Super Portfolio Ball",
+    subheader: "Playable Portfolio",
+    buttontext: "Play Now",
     buttonlink: "string",
   },
 ];
@@ -37,7 +35,7 @@ interface Props {
 }
 
 export function MainDisplay(props: React.PropsWithoutRef<Props>) {
-  const autoplay = useRef(Autoplay({ delay: 4000 }));
+  //const autoplay = useRef(Autoplay({ delay: 4000 }));
   const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
@@ -58,9 +56,9 @@ export function MainDisplay(props: React.PropsWithoutRef<Props>) {
       slideGap={0}
       loop
       align="center"
-      plugins={[autoplay.current]}
-      onMouseEnter={autoplay.current.stop}
-      onMouseLeave={autoplay.current.reset}
+      //plugins={[autoplay.current]}
+      //onMouseEnter={autoplay.current.stop}
+      //onMouseLeave={autoplay.current.reset}
       getEmblaApi={setEmbla}
     >
       {slides}

@@ -2,11 +2,12 @@ import "@mantine/core/styles.css";
 import { Group, MantineProvider, Stack, createTheme } from "@mantine/core";
 import { Header } from "./Header.tsx";
 import { MainDisplay } from "./MainDisplay.tsx";
-import { About } from "./About.tsx";
+//import { About } from "./About.tsx";
 import { ProjectDisplay } from "./ProjectDisplay.tsx";
 
 const theme = createTheme({
   fontFamily: "Nunito Sans, sans-serif",
+  primaryColor: "orange",
 });
 
 export default function App() {

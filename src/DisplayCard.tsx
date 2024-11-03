@@ -38,7 +38,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           {props.header}
         </Title>
 
-        <Button variant="filled" w={120} color="orange">
+        <Button variant="filled" w={120}>
           {props.buttontext}
         </Button>
       </Stack>
