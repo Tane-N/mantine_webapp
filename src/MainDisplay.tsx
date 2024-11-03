@@ -1,14 +1,27 @@
-import { Carousel } from "@mantine/carousel";
+import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
 import React, { useRef } from "react";
+import { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import { Image } from "@mantine/core";
+import { DisplayCard } from "./DisplayCard";
 
-const images = [
-  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
-  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
-  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png",
-  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png",
-  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-5.png",
+const cards = [
+  {
+    image:
+      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
+    header: "Super Portfolio Ball",
+    subheader: "Try It Out",
+    buttontext: "Play Now",
+    buttonlink: "string",
+  },
+
+  {
+    image:
+      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
+    header: "Mimicologist",
+    subheader: "Currently In Development",
+    buttontext: "See More",
+    buttonlink: "string",
+  },
 ];
 
 interface Props {
@@ -17,16 +30,22 @@ interface Props {
 
 export function MainDisplay(props: React.PropsWithoutRef<Props>) {
   const autoplay = useRef(Autoplay({ delay: 3000 }));
-  const slides = images.map((url) => (
-    <Carousel.Slide key={url}>
-      <Image src={url} />
+  const TRANSITION_DURATION = 400;
+  const [embla, setEmbla] = useState<Embla | null>(null);
+  useAnimationOffsetEffect(embla, TRANSITION_DURATION);
+
+  const slides = cards.map((card) => (
+    <Carousel.Slide key={card.header}>
+      <DisplayCard {...card} />
     </Carousel.Slide>
   ));
+
   return (
     <Carousel
       withIndicators
       height={props.h}
-      style={{ flex: 1 }}
+      maw="100%"
+      w="100%"
       slideSize="100%"
       slideGap={0}
       loop
@@ -34,6 +53,7 @@ export function MainDisplay(props: React.PropsWithoutRef<Props>) {
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
+      getEmblaApi={setEmbla}
     >
       {slides}
     </Carousel>
