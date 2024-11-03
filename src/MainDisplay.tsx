@@ -9,7 +9,7 @@ const cards = [
     image:
       "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
     header: "Super Portfolio Ball",
-    subheader: "Try It Out",
+    subheader: "Bear Witness",
     buttontext: "Play Now",
     buttonlink: "string",
   },
@@ -19,7 +19,7 @@ const cards = [
       "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
     header: "Mimicologist",
     subheader: "Currently In Development",
-    buttontext: "See More",
+    buttontext: "More Info",
     buttonlink: "string",
   },
   {
@@ -27,7 +27,7 @@ const cards = [
       "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png",
     header: "Camera Tenebris",
     subheader: "Latest Release",
-    buttontext: "Play Now",
+    buttontext: "View Page",
     buttonlink: "string",
   },
 ];
@@ -37,8 +37,8 @@ interface Props {
 }
 
 export function MainDisplay(props: React.PropsWithoutRef<Props>) {
-  const autoplay = useRef(Autoplay({ delay: 3000 }));
-  const TRANSITION_DURATION = 400;
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
+  const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 

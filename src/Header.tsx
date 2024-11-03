@@ -17,9 +17,8 @@ export function Header(props: React.PropsWithoutRef<Props>) {
   const buttons = links.map((link) => (
     <Button
       key={link.link}
-      color="orange"
-      h={props.h / 1.9}
-      variant={active === link.link ? "filled" : "outline"}
+      variant="transparent"
+      color={active === link.link ? "orange" : "grey"}
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
