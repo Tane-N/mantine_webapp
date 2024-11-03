@@ -22,7 +22,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
         }}
       >
         <Title
-          order={5}
+          size={25}
           ta="center"
           c="white"
           style={{ textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)" }}
@@ -30,7 +30,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           {props.subheader}
         </Title>
         <Title
-          order={1}
+          size={50}
           ta="center"
           c="white"
           style={{ textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)" }}

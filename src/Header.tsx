@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Group, Image, Button } from "@mantine/core";
+import { useScrollIntoView } from "@mantine/hooks";
 
 const links = [
-  { link: "/home", label: "Home" },
-  { link: "/about", label: "About" },
-  { link: "/projects", label: "Projects" },
+  { link: "home", label: "Home" },
+  { link: "about", label: "About" },
+  { link: "projects", label: "Projects" },
 ];
 
 interface Props {
   h: number;
+  onScrollToSection: (section: string) => void;
 }
 
 export function Header(props: React.PropsWithoutRef<Props>) {
@@ -18,10 +20,11 @@ export function Header(props: React.PropsWithoutRef<Props>) {
     <Button
       key={link.link}
       variant="transparent"
-      color={active === link.link ? "orange" : "grey"}
+      //color={active === link.link ? "orange" : "grey"}
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        props.onScrollToSection(link.link);
       }}
     >
       {link.label}
