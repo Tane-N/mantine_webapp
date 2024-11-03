@@ -30,7 +30,7 @@ export default function App() {
                 <MainDisplay h={500} />
               </div>
               <div id="about">
-                <About h={200} />
+                <About h={500} />
               </div>
               <div id="projects">
                 <ProjectDisplay />

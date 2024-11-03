@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
+import { useState, useEffect } from "react";
 import { Group, Image, Button } from "@mantine/core";
-import { useScrollIntoView } from "@mantine/hooks";
 
 const links = [
   { link: "home", label: "Home" },
@@ -14,6 +13,7 @@ interface Props {
 
 export function Header(props: React.PropsWithoutRef<Props>) {
   const [active, setActive] = useState(links[0].link);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
@@ -21,11 +21,52 @@ export function Header(props: React.PropsWithoutRef<Props>) {
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.scrollY - props.h;
 
+    setIsScrolling(true);
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
     });
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 300);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isScrolling) return;
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            setActive(sectionId);
+          }
+        });
+      },
+      {
+        rootMargin: `-${props.h}px 0px 0px 0px`,
+        threshold: 0.8,
+      }
+    );
+
+    links.forEach((link) => {
+      const section = document.getElementById(link.link);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      links.forEach((link) => {
+        const section = document.getElementById(link.link);
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, [props.h, isScrolling]);
 
   const buttons = links.map((link) => (
     <Button

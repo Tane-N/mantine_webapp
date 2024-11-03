@@ -9,7 +9,7 @@ const cards = [
     image: "./public/camera_tenebris.jpg",
     header: "Camera Tenebris",
     subheader: "Latest Release",
-    buttontext: "View Page",
+    buttontext: "Play Now",
     buttonlink: "string",
   },
 
