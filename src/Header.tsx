@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Group, Image, Button } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 
@@ -10,21 +10,32 @@ const links = [
 
 interface Props {
   h: number;
-  onScrollToSection: (section: string) => void;
 }
 
 export function Header(props: React.PropsWithoutRef<Props>) {
   const [active, setActive] = useState(links[0].link);
 
+  const handleClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.scrollY - props.h;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
   const buttons = links.map((link) => (
     <Button
       key={link.link}
       variant="transparent"
-      //color={active === link.link ? "orange" : "grey"}
+      color={active === link.link ? "orange" : "grey"}
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
-        props.onScrollToSection(link.link);
+        handleClick(link.link);
       }}
     >
       {link.label}
@@ -38,13 +49,7 @@ export function Header(props: React.PropsWithoutRef<Props>) {
       px={5}
       style={{ backgroundColor: "#000000" }}
     >
-      <Image
-        h={props.h}
-        w="auto"
-        fit="contain"
-        src="./logo_no_text.jpg"
-        alt="Company logo"
-      />
+      <Image h={props.h} w="auto" fit="contain" src="./logo_no_text.jpg" />
       <Group gap={5} justify="flex-end">
         {buttons}
       </Group>
