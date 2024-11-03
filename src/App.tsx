@@ -1,6 +1,7 @@
 import "@mantine/core/styles.css";
-import { Flex, MantineProvider, createTheme } from "@mantine/core";
+import { Group, MantineProvider, Stack, createTheme } from "@mantine/core";
 import { Header } from "./Header.tsx";
+import { MainDisplay } from "./MainDisplay.tsx";
 
 const theme = createTheme({
   fontFamily: "Nunito Sans, sans-serif",
@@ -9,9 +10,12 @@ const theme = createTheme({
 export default function App() {
   return (
     <MantineProvider theme={theme} defaultColorScheme="dark">
-      <Flex justify="center">
-        <Header></Header>
-      </Flex>
+      <Group justify="center">
+        <Stack w={900} justify="flex-start" align="stretch" gap={0}>
+          <Header h={50}></Header>
+          <MainDisplay h={500}></MainDisplay>
+        </Stack>
+      </Group>
     </MantineProvider>
   );
 }

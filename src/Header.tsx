@@ -5,17 +5,20 @@ const links = [
   { link: "/home", label: "Home" },
   { link: "/about", label: "About" },
   { link: "/projects", label: "Projects" },
-  { link: "/contact", label: "Contact" },
 ];
 
-export function Header() {
+interface Props {
+  h: number;
+}
+
+export function Header(props: React.PropsWithoutRef<Props>) {
   const [active, setActive] = useState(links[0].link);
 
   const buttons = links.map((link) => (
     <Button
       key={link.link}
       color="orange"
-      size={"xs"}
+      h={props.h / 1.9}
       variant={active === link.link ? "filled" : "outline"}
       onClick={(event) => {
         event.preventDefault();
@@ -29,12 +32,12 @@ export function Header() {
   return (
     <Group
       justify="space-between"
-      w={900}
+      h={props.h}
       px={5}
       style={{ backgroundColor: "#000000" }}
     >
       <Image
-        h={40}
+        h={props.h}
         w="auto"
         fit="contain"
         src="./logo_no_text.jpg"
