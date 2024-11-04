@@ -30,7 +30,7 @@ export function Header(props: React.PropsWithoutRef<Props>) {
 
     setTimeout(() => {
       setIsScrolling(false);
-    }, 300);
+    }, 500);
   };
 
   useEffect(() => {

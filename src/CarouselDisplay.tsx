@@ -35,10 +35,9 @@ interface Props {
 }
 
 export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
-  //const autoplay = useRef(Autoplay({ delay: 4000 }));
   const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
-  const GAP = 32;
+  const GAP = 44;
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
   const slides = cards.map((card) => (
@@ -53,15 +52,12 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       height={props.h}
       maw="100%"
       w="100%"
-      slideSize="97%"
+      slideSize="96%"
       slideGap={GAP}
-      controlsOffset="xl"
-      pt="lg"
+      pt="xl"
       loop
       align="center"
-      //plugins={[autoplay.current]}
-      //onMouseEnter={autoplay.current.stop}
-      //onMouseLeave={autoplay.current.reset}
+      withControls={false}
       getEmblaApi={setEmbla}
     >
       {slides}

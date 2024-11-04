@@ -1,12 +1,4 @@
-import {
-  Paper,
-  Text,
-  Title,
-  Button,
-  Flex,
-  Center,
-  BackgroundImage,
-} from "@mantine/core";
+import { Text, Title, Button, BackgroundImage } from "@mantine/core";
 
 interface Props {
   image: string;

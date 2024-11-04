@@ -1,11 +1,4 @@
-import {
-  SimpleGrid,
-  Card,
-  Image,
-  Text,
-  Container,
-  AspectRatio,
-} from "@mantine/core";
+import { SimpleGrid, Container, Box } from "@mantine/core";
 import { GridCard } from "./GridCard";
 
 const cards = [
@@ -38,8 +31,10 @@ export function GridDisplay() {
   const displays = cards.map((card) => <GridCard {...card} />);
 
   return (
-    <Container py="xl">
-      <SimpleGrid cols={{ base: 1, sm: 2 }}>{displays}</SimpleGrid>
-    </Container>
+    <Box p="xl">
+      <SimpleGrid spacing="xl" cols={{ base: 1, sm: 2, lg: 3 }}>
+        {displays}
+      </SimpleGrid>
+    </Box>
   );
 }
