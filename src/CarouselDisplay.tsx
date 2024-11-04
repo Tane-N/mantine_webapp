@@ -38,11 +38,12 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   //const autoplay = useRef(Autoplay({ delay: 4000 }));
   const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
+  const GAP = 32;
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
   const slides = cards.map((card) => (
     <Carousel.Slide key={card.header}>
-      <DisplayCard {...card} />
+      <DisplayCard {...card} centeroffset={-GAP / 2} />
     </Carousel.Slide>
   ));
 
@@ -53,7 +54,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       maw="100%"
       w="100%"
       slideSize="97%"
-      slideGap="xl"
+      slideGap={GAP}
       controlsOffset="xl"
       pt="lg"
       loop
