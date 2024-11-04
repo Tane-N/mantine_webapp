@@ -11,7 +11,7 @@ interface Props {
   h: number;
 }
 
-export function Header(props: React.PropsWithoutRef<Props>) {
+export function StickyHeader(props: React.PropsWithoutRef<Props>) {
   const [active, setActive] = useState(links[0].link);
   const [isScrolling, setIsScrolling] = useState(false);
 

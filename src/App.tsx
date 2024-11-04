@@ -7,10 +7,11 @@ import {
   createTheme,
   Divider,
 } from "@mantine/core";
-import { Header } from "./Header.tsx";
+import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
 import { About } from "./About.tsx";
 import { GridDisplay } from "./GridDisplay.tsx";
+import { SimpleFooter } from "./SimpleFooter.tsx";
 
 const theme = createTheme({
   fontFamily: "Nunito Sans, sans-serif",
@@ -22,7 +23,7 @@ export default function App() {
     <MantineProvider theme={theme} defaultColorScheme="dark">
       <AppShell withBorder={false}>
         <AppShell.Header>
-          <Header h={50} />
+          <StickyHeader h={50} />
         </AppShell.Header>
         <AppShell.Main mt={50}>
           <Group justify="center">
@@ -35,6 +36,9 @@ export default function App() {
                 <GridDisplay />
               </div>
               <Divider my="md" />
+              <div>
+                <SimpleFooter h={70} pt={35} />
+              </div>
             </Stack>
           </Group>
         </AppShell.Main>
