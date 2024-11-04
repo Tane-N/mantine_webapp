@@ -23,7 +23,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
       <div style={{ position: "relative", height: "100%" }}>
         <Image src={props.image} fit="cover" h="100%" radius="md" />
         <Overlay
-          gradient="linear-gradient(-3deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)"
+          gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 80%)"
           radius="md"
           style={{ pointerEvents: "none" }}
         />

@@ -1,4 +1,4 @@
-import { SimpleGrid, Container, Box } from "@mantine/core";
+import { SimpleGrid, Box } from "@mantine/core";
 import { GridCard } from "./GridCard";
 
 const cards = [
