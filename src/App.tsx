@@ -9,7 +9,6 @@ import {
 } from "@mantine/core";
 import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
-import { About } from "./About.tsx";
 import { GridDisplay } from "./GridDisplay.tsx";
 import { SimpleFooter } from "./SimpleFooter.tsx";
 

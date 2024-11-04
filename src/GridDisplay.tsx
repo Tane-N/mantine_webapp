@@ -28,7 +28,7 @@ const cards = [
 ];
 
 export function GridDisplay() {
-  const displays = cards.map((card) => <GridCard {...card} />);
+  const displays = cards.map((card) => <GridCard {...card} key={card.image} />);
 
   return (
     <Box p={"xl"}>

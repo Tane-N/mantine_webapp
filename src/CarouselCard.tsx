@@ -16,10 +16,14 @@ interface Props {
   buttontext: string;
   buttonlink: string;
   centeroffset: number;
+  onslideclick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 export function DisplayCard(props: React.PropsWithoutRef<Props>) {
   return (
-    <Box style={{ height: "100%", overflow: "hidden" }}>
+    <Box
+      style={{ height: "100%", overflow: "hidden" }}
+      onClick={props.onslideclick}
+    >
       <div style={{ position: "relative", height: "100%" }}>
         <Image src={props.image} fit="cover" h="100%" radius="md" />
         <Overlay
@@ -44,7 +48,10 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
             size={25}
             ta="center"
             c="white"
-            style={{ textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)" }}
+            style={{
+              textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
+              pointerEvents: "none",
+            }}
           >
             {props.subheader}
           </Title>
@@ -52,7 +59,10 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
             size={50}
             ta="center"
             c="white"
-            style={{ textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)" }}
+            style={{
+              textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
+              pointerEvents: "none",
+            }}
           >
             {props.header}
           </Title>

@@ -40,9 +40,28 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   const GAP = 44;
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
+  const handleSlideClick = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    if (!embla) return;
+
+    const slideWidth = event.currentTarget.clientWidth;
+    const clickX = event.nativeEvent.offsetX;
+
+    if (clickX > slideWidth / 2 + slideWidth * 0.2) {
+      embla.scrollNext();
+    } else if (clickX < slideWidth / 2 - slideWidth * 0.2) {
+      embla.scrollPrev();
+    }
+  };
+
   const slides = cards.map((card) => (
     <Carousel.Slide key={card.header}>
-      <DisplayCard {...card} centeroffset={-GAP / 2} />
+      <DisplayCard
+        {...card}
+        centeroffset={-GAP / 2}
+        onslideclick={handleSlideClick}
+      />
     </Carousel.Slide>
   ));
 
