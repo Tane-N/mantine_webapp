@@ -1,8 +1,9 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { DisplayCard } from "./CarouselCard";
 import classes from "./tweens.module.css";
+import Autoplay from "embla-carousel-autoplay";
 
 const cards = [
   {
@@ -38,30 +39,27 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
   const GAP = 44;
+  const autoplay = useRef(
+    Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
+  );
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
-  const handleSlideClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!embla) return;
 
-    const slideWidth = event.currentTarget.clientWidth;
-    const clickX = event.nativeEvent.offsetX;
+    const width = window.innerWidth;
+    const clickX = event.clientX;
 
-    if (clickX > slideWidth / 2 + slideWidth * 0.2) {
+    if (clickX > width / 2 + width * 0.1) {
       embla.scrollNext();
-    } else if (clickX < slideWidth / 2 - slideWidth * 0.2) {
+    } else if (clickX < width / 2 - width * 0.1) {
       embla.scrollPrev();
     }
   };
 
   const slides = cards.map((card) => (
     <Carousel.Slide key={card.header}>
-      <DisplayCard
-        {...card}
-        centeroffset={-GAP / 2}
-        onslideclick={handleSlideClick}
-      />
+      <DisplayCard {...card} centeroffset={-GAP / 2} />
     </Carousel.Slide>
   ));
 
@@ -80,6 +78,11 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       withControls={false}
       getEmblaApi={setEmbla}
       className={classes.scale}
+      plugins={[autoplay.current]}
+      onClick={(event) => {
+        event.preventDefault();
+        handleClick(event);
+      }}
     >
       {slides}
     </Carousel>

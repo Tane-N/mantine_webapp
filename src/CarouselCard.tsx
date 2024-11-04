@@ -16,14 +16,10 @@ interface Props {
   buttontext: string;
   buttonlink: string;
   centeroffset: number;
-  onslideclick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 export function DisplayCard(props: React.PropsWithoutRef<Props>) {
   return (
-    <Box
-      style={{ height: "100%", overflow: "hidden" }}
-      onClick={props.onslideclick}
-    >
+    <Box style={{ height: "100%", overflow: "hidden" }}>
       <div style={{ position: "relative", height: "100%" }}>
         <Image src={props.image} fit="cover" h="100%" radius="md" />
         <Overlay
