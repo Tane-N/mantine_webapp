@@ -7,9 +7,9 @@ import {
   createTheme,
 } from "@mantine/core";
 import { Header } from "./Header.tsx";
-import { MainDisplay } from "./MainDisplay.tsx";
+import { CarouselDisplay } from "./CarouselDisplay.tsx";
 import { About } from "./About.tsx";
-import { ProjectDisplay } from "./ProjectDisplay.tsx";
+import { GridDisplay } from "./GridDisplay.tsx";
 
 const theme = createTheme({
   fontFamily: "Nunito Sans, sans-serif",
@@ -27,13 +27,11 @@ export default function App() {
           <Group justify="center">
             <Stack justify="flex-start" align="stretch" gap={0}>
               <div id="home">
-                <MainDisplay h={500} />
+                <CarouselDisplay h={500} />
               </div>
-              <div id="about">
-                <About h={500} />
-              </div>
+              <div id="about"></div>
               <div id="projects">
-                <ProjectDisplay />
+                <GridDisplay />
               </div>
             </Stack>
           </Group>

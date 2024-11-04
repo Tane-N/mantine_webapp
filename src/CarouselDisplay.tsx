@@ -2,7 +2,7 @@ import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
 import React, { useRef } from "react";
 import { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import { DisplayCard } from "./DisplayCard";
+import { DisplayCard } from "./CarouselCard";
 
 const cards = [
   {
@@ -34,7 +34,7 @@ interface Props {
   h: number;
 }
 
-export function MainDisplay(props: React.PropsWithoutRef<Props>) {
+export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   //const autoplay = useRef(Autoplay({ delay: 4000 }));
   const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
@@ -52,8 +52,10 @@ export function MainDisplay(props: React.PropsWithoutRef<Props>) {
       height={props.h}
       maw="100%"
       w="100%"
-      slideSize="100%"
-      slideGap={0}
+      slideSize="97%"
+      slideGap="xl"
+      controlsOffset="xl"
+      pt="lg"
       loop
       align="center"
       //plugins={[autoplay.current]}

@@ -1,4 +1,4 @@
-import { Button, Image, Title, Box, Stack } from "@mantine/core";
+import { Button, Image, Title, Box, Stack, Center } from "@mantine/core";
 
 interface Props {
   image: string;
@@ -10,14 +10,14 @@ interface Props {
 export function DisplayCard(props: React.PropsWithoutRef<Props>) {
   return (
     <Box style={{ height: "100%", overflow: "hidden" }}>
-      <Image src={props.image} fit="cover" h="100%" />
+      <Image src={props.image} fit="cover" h="100%" radius="md" />
       <Stack
         align="center"
         justify="center"
         style={{
           position: "absolute",
+          left: "50",
           top: "50%",
-          left: "50%",
           transform: "translate(-50%, -50%)",
         }}
       >
