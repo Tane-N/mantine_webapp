@@ -24,7 +24,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         </Flex>
       </BackgroundImage>
       <Overlay
-        gradient="linear-gradient(-45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 40%)"
+        gradient="linear-gradient(-45deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%)"
         radius="md"
         style={{ pointerEvents: "none" }}
       />
