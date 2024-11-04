@@ -1,4 +1,4 @@
-import { Text, Title, Button, BackgroundImage } from "@mantine/core";
+import { Text, Title, Button, BackgroundImage, Overlay } from "@mantine/core";
 import classes from "./tweens.module.css";
 
 interface Props {
@@ -9,20 +9,22 @@ interface Props {
 
 export function GridCard(props: React.PropsWithoutRef<Props>) {
   return (
-    <BackgroundImage
-      src={props.image}
-      h={250}
-      p="lg"
-      radius="md"
+    <div
+      style={{ position: "relative", height: 250 }}
       className={classes.scale}
     >
-      <div>
-        <Text size="xs">{props.subheader}</Text>
+      <BackgroundImage src={props.image} h={250} p="lg" radius="md">
+        {/* <Text size="xs">{props.subheader}</Text>
         <Title order={3}>{props.header}</Title>
-      </div>
-      <Button variant="filled" className={classes.scale}>
-        More Info
-      </Button>
-    </BackgroundImage>
+        <Button variant="filled" className={classes.scale}>
+          More Info
+        </Button> */}
+      </BackgroundImage>
+      <Overlay
+        gradient="linear-gradient(-3deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)"
+        radius="md"
+        style={{ pointerEvents: "none" }}
+      />
+    </div>
   );
 }

@@ -1,4 +1,12 @@
-import { Button, Image, Title, Box, Stack, Center } from "@mantine/core";
+import {
+  Button,
+  Image,
+  Title,
+  Box,
+  Stack,
+  Center,
+  Overlay,
+} from "@mantine/core";
 import classes from "./tweens.module.css";
 
 interface Props {
@@ -12,7 +20,15 @@ interface Props {
 export function DisplayCard(props: React.PropsWithoutRef<Props>) {
   return (
     <Box style={{ height: "100%", overflow: "hidden" }}>
-      <Image src={props.image} fit="cover" h="100%" radius="md" />
+      <div style={{ position: "relative", height: "100%" }}>
+        <Image src={props.image} fit="cover" h="100%" radius="md" />
+        <Overlay
+          gradient="linear-gradient(-3deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)"
+          radius="md"
+          style={{ pointerEvents: "none" }}
+        />
+      </div>
+
       <Center
         style={{
           position: "absolute",
@@ -20,6 +36,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           width: "100%",
           top: 0,
           left: props.centeroffset,
+          zIndex: 201,
         }}
       >
         <Stack align="center" justify="center" w="80%">
