@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Group, Image, Button } from "@mantine/core";
+import classes from "./tweens.module.css";
 
 const links = [
   { link: "home", label: "Home" },
@@ -73,6 +74,7 @@ export function Header(props: React.PropsWithoutRef<Props>) {
       key={link.link}
       variant="transparent"
       color={active === link.link ? "orange" : "grey"}
+      className={classes.scale}
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);

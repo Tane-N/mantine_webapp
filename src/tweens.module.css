@@ -1,0 +1,11 @@
+.scale {
+  transition: transform 150ms ease;
+}
+
+.scale:hover {
+  transform: scale(1.02);
+}
+
+.scale:active {
+  transform: scale(1);
+}

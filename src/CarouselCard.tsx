@@ -1,4 +1,5 @@
 import { Button, Image, Title, Box, Stack, Center } from "@mantine/core";
+import classes from "./tweens.module.css";
 
 interface Props {
   image: string;
@@ -39,7 +40,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
             {props.header}
           </Title>
 
-          <Button variant="filled" w={110}>
+          <Button variant="filled" w={110} className={classes.scale}>
             {props.buttontext}
           </Button>
         </Stack>

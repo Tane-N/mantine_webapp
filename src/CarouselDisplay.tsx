@@ -1,8 +1,8 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
-import React, { useRef } from "react";
+import React from "react";
 import { useState } from "react";
-import Autoplay from "embla-carousel-autoplay";
 import { DisplayCard } from "./CarouselCard";
+import classes from "./tweens.module.css";
 
 const cards = [
   {
@@ -52,13 +52,14 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       height={props.h}
       maw="100%"
       w="100%"
-      slideSize="96%"
+      slideSize="90%"
       slideGap={GAP}
       pt="xl"
       loop
       align="center"
       withControls={false}
       getEmblaApi={setEmbla}
+      className={classes.scale}
     >
       {slides}
     </Carousel>
