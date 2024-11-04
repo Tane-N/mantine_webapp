@@ -5,6 +5,7 @@ import {
   MantineProvider,
   Stack,
   createTheme,
+  Divider,
 } from "@mantine/core";
 import { Header } from "./Header.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
@@ -29,10 +30,11 @@ export default function App() {
               <div id="home">
                 <CarouselDisplay h={500} />
               </div>
-              <div id="about"></div>
+              <Divider my="md" />
               <div id="projects">
                 <GridDisplay />
               </div>
+              <Divider my="md" />
             </Stack>
           </Group>
         </AppShell.Main>

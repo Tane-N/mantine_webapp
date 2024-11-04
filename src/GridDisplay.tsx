@@ -31,7 +31,7 @@ export function GridDisplay() {
   const displays = cards.map((card) => <GridCard {...card} />);
 
   return (
-    <Box p="xl">
+    <Box p={"xl"}>
       <SimpleGrid spacing="xl" cols={{ base: 1, sm: 2, lg: 3 }}>
         {displays}
       </SimpleGrid>

@@ -54,7 +54,8 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       w="100%"
       slideSize="90%"
       slideGap={GAP}
-      pt="xl"
+      mt="xl"
+      mb="xl"
       loop
       align="center"
       withControls={false}

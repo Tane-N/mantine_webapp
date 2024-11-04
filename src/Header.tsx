@@ -4,7 +4,6 @@ import classes from "./tweens.module.css";
 
 const links = [
   { link: "home", label: "Home" },
-  { link: "about", label: "About" },
   { link: "projects", label: "Projects" },
 ];
 
@@ -90,9 +89,15 @@ export function Header(props: React.PropsWithoutRef<Props>) {
       justify="space-between"
       h={props.h}
       px={5}
-      style={{ backgroundColor: "#000000" }}
+      style={{ backgroundColor: "#000000", borderRadius: 8 }}
     >
-      <Image h={props.h} w="auto" fit="contain" src="./logo_no_text.jpg" />
+      <Image
+        h={props.h}
+        w="auto"
+        fit="contain"
+        src="./logo_no_text.jpg"
+        ml="xs"
+      />
       <Group gap={5} justify="flex-end">
         {buttons}
       </Group>
