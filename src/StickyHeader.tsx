@@ -47,7 +47,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
       },
       {
         rootMargin: `-${props.h}px 0px 0px 0px`,
-        threshold: 0.8,
+        threshold: 0.6,
       }
     );
 
