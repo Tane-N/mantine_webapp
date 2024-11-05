@@ -6,12 +6,10 @@ import {
   Modal,
   Title,
   Center,
-  Button,
-  Stack,
-  Group,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery, useViewportSize } from "@mantine/hooks";
 import classes from "./tweens.module.css";
+import { AspectRatio } from "@mantine/core";
 
 interface Props {
   image: string;
@@ -46,6 +44,38 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
 
   return (
     <div>
+      <div
+        style={{
+          position: "relative",
+          height: "40%",
+        }}
+        className={classes.scale}
+      >
+        <AspectRatio ratio={16 / 9}>
+          <BackgroundImage
+            src={props.image}
+            h="100%"
+            p="lg"
+            radius="md"
+            onClick={open}
+          >
+            <Flex h="100%" justify="flex-end" align="flex-end">
+              <Image
+                src="./public/maximize-2.svg"
+                h="10%"
+                w="auto"
+                style={{ zIndex: 202 }}
+              />
+            </Flex>
+          </BackgroundImage>
+          <Overlay
+            gradient="linear-gradient(-45deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%)"
+            radius="md"
+            style={{ pointerEvents: "none" }}
+          />
+        </AspectRatio>
+      </div>
+
       <Modal
         opened={opened}
         onClose={close}
@@ -99,32 +129,6 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         </BackgroundImage>
         <Overlay color="#000" backgroundOpacity={0.6} radius="md" />
       </Modal>
-      <div
-        style={{ position: "relative", height: 250 }}
-        className={classes.scale}
-      >
-        <BackgroundImage
-          src={props.image}
-          h="100%"
-          p="lg"
-          radius="md"
-          onClick={open}
-        >
-          <Flex h="100%" justify="flex-end" align="flex-end">
-            <Image
-              src="./public/maximize-2.svg"
-              h="10%"
-              w="auto"
-              style={{ zIndex: 202 }}
-            />
-          </Flex>
-        </BackgroundImage>
-        <Overlay
-          gradient="linear-gradient(-45deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%)"
-          radius="md"
-          style={{ pointerEvents: "none" }}
-        />
-      </div>
     </div>
   );
 }
