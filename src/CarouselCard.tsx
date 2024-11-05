@@ -13,6 +13,7 @@ interface Props {
   image: string;
   header: string;
   subheader: string;
+  description: string;
   buttontext: string;
   buttonlink: string;
   centeroffset: number;
@@ -63,6 +64,18 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
             }}
           >
             {props.header}
+          </Title>
+          <Title
+            size={10}
+            ta="center"
+            c="white"
+            style={{
+              textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+          >
+            {props.description}
           </Title>
           <Button variant="filled" w={120} className={classes.scale}>
             {props.buttontext}

@@ -1,11 +1,10 @@
 import "@mantine/core/styles.css";
 import {
   AppShell,
-  Group,
   MantineProvider,
-  Stack,
   createTheme,
   Divider,
+  Flex,
 } from "@mantine/core";
 import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
@@ -24,29 +23,31 @@ export default function App() {
         <AppShell.Header>
           <StickyHeader h={50} />
         </AppShell.Header>
-        <AppShell.Main mt={50}>
-          <Group justify="center">
-            <Stack justify="flex-start" align="stretch" gap={0}>
-              <div
-                id="home"
-                style={{
-                  overflow: "hidden",
-                  maxWidth: "100%",
-                }}
-              >
-                <CarouselDisplay h={500} />
-              </div>
 
-              <Divider my="md" />
-              <div id="projects">
-                <GridDisplay />
-              </div>
-              <Divider my="md" />
-              <div id="contact">
-                <SimpleFooter h={100} pt={35} />
-              </div>
-            </Stack>
-          </Group>
+        <AppShell.Main mt={50}>
+          <Flex direction="column" justify="center" align="stretch" gap={0}>
+            <div
+              id="home"
+              style={{
+                overflow: "hidden",
+                maxWidth: "100%",
+              }}
+            >
+              <CarouselDisplay h={500} />
+            </div>
+
+            <Divider my="md" />
+
+            <div id="projects">
+              <GridDisplay />
+            </div>
+
+            <Divider my="md" />
+
+            <div id="contact">
+              <SimpleFooter h={100} pt={35} />
+            </div>
+          </Flex>
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
