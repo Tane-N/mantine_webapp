@@ -1,5 +1,5 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { DisplayCard } from "./CarouselCard";
 import classes from "./tweens.module.css";
@@ -18,7 +18,7 @@ const cards = [
     image: "./public/mimicologist_placeholder.jpg",
     header: "Mimicologist",
     subheader: "Currently In Development",
-    buttontext: "More Info",
+    buttontext: "Learn More",
     buttonlink: "string",
   },
 
