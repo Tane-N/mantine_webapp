@@ -42,7 +42,7 @@ export default function App() {
                 <GridDisplay />
               </div>
               <Divider my="md" />
-              <div>
+              <div id="contact">
                 <SimpleFooter h={70} pt={35} />
               </div>
             </Stack>

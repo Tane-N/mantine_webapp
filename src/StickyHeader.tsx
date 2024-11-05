@@ -5,6 +5,7 @@ import classes from "./tweens.module.css";
 const links = [
   { link: "home", label: "Home" },
   { link: "projects", label: "Projects" },
+  { link: "contact", label: "Contact" },
 ];
 
 interface Props {

@@ -47,6 +47,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
             style={{
               textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
               pointerEvents: "none",
+              userSelect: "none",
             }}
           >
             {props.subheader}
@@ -58,6 +59,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
             style={{
               textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
               pointerEvents: "none",
+              userSelect: "none",
             }}
           >
             {props.header}

@@ -4,26 +4,30 @@ import { GridCard } from "./GridCard";
 const cards = [
   {
     image: "./public/coffer_quest.jpg",
-    header: "Coffer Quest",
-    subheader: "Medieval management game",
+    content: "Coffer Quest",
+    buttonText: "",
+    buttonLink: "",
   },
 
   {
     image: "./public/together_we_die.jpg",
-    header: "Together We Die",
-    subheader: "Co-op horror fps",
+    content: "Together We Die",
+    buttonText: "",
+    buttonLink: "",
   },
 
   {
     image: "./public/boing_odyssey.jpg",
-    header: "Boing Odyssey",
-    subheader: "Physics puzzler",
+    content: "Boing Odyssey",
+    buttonText: "Store Page",
+    buttonLink: "",
   },
 
   {
     image: "./public/project_godspeed.jpg",
-    header: "Project Godspeed",
-    subheader: "Run-and-gun platformer",
+    content: "Project Godspeed",
+    buttonText: "Play Now",
+    buttonLink: "",
   },
 ];
 
