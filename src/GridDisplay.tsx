@@ -3,32 +3,27 @@ import { GridCard } from "./GridCard";
 
 const cards = [
   {
-    image: "./public/coffer_quest.jpg",
-    content: "Coffer Quest",
-    buttonText: "",
-    buttonLink: "",
+    image: "./public/boing_odyssey.jpg",
+    content: "Contraption building puzzle game",
+    link: "",
   },
 
   {
     image: "./public/together_we_die.jpg",
-    content: "Together We Die",
-    buttonText: "",
-    buttonLink: "",
-  },
-
-  {
-    image: "./public/boing_odyssey.jpg",
-    content:
-      "Boing Odyssey is a contraption building puzzle game, released in february 2024. It features 80+ levels, a built-in level editor and a way to browse and play levels made by others. Made with Unity",
-    buttonText: "Store Page",
-    buttonLink: "",
+    content: "Co-op horror shooter",
+    link: "",
   },
 
   {
     image: "./public/project_godspeed.jpg",
-    content: "Project Godspeed",
-    buttonText: "Play Now",
-    buttonLink: "",
+    content: "Roguelike run-and-gun platformer",
+    link: "",
+  },
+
+  {
+    image: "./public/coffer_quest.jpg",
+    content: "Management simulation",
+    link: "",
   },
 ];
 
