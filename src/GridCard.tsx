@@ -7,7 +7,7 @@ import {
   Title,
   Center,
 } from "@mantine/core";
-import { useDisclosure, useMediaQuery, useViewportSize } from "@mantine/hooks";
+import { useDisclosure, useViewportSize } from "@mantine/hooks";
 import classes from "./tweens.module.css";
 import { AspectRatio } from "@mantine/core";
 
@@ -22,13 +22,12 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
   const [opened, { open, close }] = useDisclosure(false);
 
   const MIN_DESKTOP_WIDTH = 1280;
-  const { width, height } = useViewportSize();
+  const { width } = useViewportSize();
 
   const ASPECT_RATIO = 16 / 9;
-  const MAX_TEXT_SIZE = 35;
 
-  const setTextSize = (): number => {
-    return MAX_TEXT_SIZE * Math.min(Math.max(width / MIN_DESKTOP_WIDTH, 0), 1);
+  const setTextSize = (maxSize: number): number => {
+    return maxSize * Math.min(Math.max(width / MIN_DESKTOP_WIDTH, 0), 1);
   };
 
   return (
@@ -83,14 +82,17 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
       >
         <AspectRatio ratio={ASPECT_RATIO}>
           <BackgroundImage src={props.image} h="100%" p="lg" radius="md">
-            <Flex h="100%" w="100%" justify="flex-end" align="flex-end">
-              <Image
-                src="./public/minimize-2.svg"
-                h="5%"
-                w="auto"
-                style={{ zIndex: 301 }}
-              />
-            </Flex>
+            <Image
+              src="./public/minimize-2.svg"
+              h="7%"
+              w="auto"
+              style={{
+                position: "absolute",
+                top: "88%",
+                left: "93%",
+                zIndex: 300,
+              }}
+            />
             <Center
               style={{
                 position: "absolute",
@@ -102,7 +104,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
               }}
             >
               <Title
-                size={setTextSize()}
+                size={setTextSize(25)}
                 ta="left"
                 c="white"
                 p="xl"

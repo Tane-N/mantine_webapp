@@ -18,7 +18,8 @@ const cards = [
 
   {
     image: "./public/boing_odyssey.jpg",
-    content: "Boing Odyssey",
+    content:
+      "Boing Odyssey is a contraption building puzzle game, released in february 2024. It features 80+ levels, a built-in level editor and a way to browse and play levels made by others. Made with Unity",
     buttonText: "Store Page",
     buttonLink: "",
   },
