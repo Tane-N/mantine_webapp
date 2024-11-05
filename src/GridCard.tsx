@@ -6,6 +6,8 @@ import {
   Modal,
   Title,
   Center,
+  Button,
+  Stack,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import classes from "./tweens.module.css";
@@ -19,7 +21,30 @@ interface Props {
 
 export function GridCard(props: React.PropsWithoutRef<Props>) {
   const [opened, { open, close }] = useDisclosure(false);
-  const isMobile = useMediaQuery("(max-width: 1000px)");
+
+  const MIN_DESKTOP_WIDTH = 1280;
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const isDesktop = useMediaQuery("(min-width: 1280px)");
+
+  const MODAL_GAP_MULTIPLIER = isDesktop ? 0.7 : 0.9;
+
+  const aspectRatio = 16 / 9;
+  const modalWidth = windowWidth * MODAL_GAP_MULTIPLIER;
+  const modalHeight = Math.min(
+    modalWidth / aspectRatio,
+    windowHeight * MODAL_GAP_MULTIPLIER
+  );
+
+  const MAX_TEXT_SIZE = 35;
+
+  const setTextSize = (): number => {
+    if (isDesktop) return MAX_TEXT_SIZE;
+
+    return (
+      MAX_TEXT_SIZE * Math.min(Math.max(windowWidth / MIN_DESKTOP_WIDTH, 0), 1)
+    );
+  };
 
   return (
     <div>
@@ -30,7 +55,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         zIndex={300}
         centered
         radius="md"
-        size={isMobile ? "100%" : "70%"}
+        size={modalWidth}
         transitionProps={{
           duration: 150,
           transition: "scale",
@@ -39,7 +64,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         padding={0}
         onClick={close}
       >
-        <BackgroundImage src={props.image} h={600} p="lg" radius="md">
+        <BackgroundImage src={props.image} h={modalHeight} p="lg" radius="md">
           <Flex h="100%" justify="flex-end" align="flex-end">
             <Image
               src="./public/minimize-2.svg"
@@ -58,23 +83,26 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
               zIndex: 300,
             }}
           >
-            <Title
-              size={25}
-              ta="left"
-              c="white"
-              p="xl"
-              lh="xl"
-              style={{
-                textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
-                pointerEvents: "none",
-                userSelect: "none",
-              }}
-            >
-              {props.content}
-            </Title>
+            <Stack>
+              <Title
+                size={setTextSize()}
+                ta="left"
+                c="white"
+                p="xl"
+                lh="xl"
+                style={{
+                  textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
+                  pointerEvents: "none",
+                  userSelect: "none",
+                }}
+              >
+                {props.content}
+              </Title>
+              <Button variant="filled">{props.buttonText}</Button>
+            </Stack>
           </Center>
         </BackgroundImage>
-        <Overlay color="#000" backgroundOpacity={0.5} radius="md" />
+        <Overlay color="#000" backgroundOpacity={0.6} radius="md" />
       </Modal>
       <div
         style={{ position: "relative", height: 250 }}

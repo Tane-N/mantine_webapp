@@ -43,7 +43,7 @@ export default function App() {
               </div>
               <Divider my="md" />
               <div id="contact">
-                <SimpleFooter h={70} pt={35} />
+                <SimpleFooter h={100} pt={35} />
               </div>
             </Stack>
           </Group>
