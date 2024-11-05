@@ -9,7 +9,7 @@ import {
   Button,
   Stack,
 } from "@mantine/core";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { useDisclosure, useMediaQuery, useViewportSize } from "@mantine/hooks";
 import classes from "./tweens.module.css";
 
 interface Props {
@@ -23,17 +23,16 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
   const [opened, { open, close }] = useDisclosure(false);
 
   const MIN_DESKTOP_WIDTH = 1280;
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+  const { width, height } = useViewportSize();
   const isDesktop = useMediaQuery("(min-width: 1280px)");
 
   const MODAL_GAP_MULTIPLIER = isDesktop ? 0.7 : 0.9;
 
   const aspectRatio = 16 / 9;
-  const modalWidth = windowWidth * MODAL_GAP_MULTIPLIER;
+  const modalWidth = width * MODAL_GAP_MULTIPLIER;
   const modalHeight = Math.min(
     modalWidth / aspectRatio,
-    windowHeight * MODAL_GAP_MULTIPLIER
+    height * MODAL_GAP_MULTIPLIER
   );
 
   const MAX_TEXT_SIZE = 35;
@@ -41,9 +40,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
   const setTextSize = (): number => {
     if (isDesktop) return MAX_TEXT_SIZE;
 
-    return (
-      MAX_TEXT_SIZE * Math.min(Math.max(windowWidth / MIN_DESKTOP_WIDTH, 0), 1)
-    );
+    return MAX_TEXT_SIZE * Math.min(Math.max(width / MIN_DESKTOP_WIDTH, 0), 1);
   };
 
   return (
@@ -83,7 +80,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
               zIndex: 300,
             }}
           >
-            <Stack>
+            <Stack align="center" justify="center">
               <Title
                 size={setTextSize()}
                 ta="left"
@@ -98,7 +95,6 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
               >
                 {props.content}
               </Title>
-              <Button variant="filled">{props.buttonText}</Button>
             </Stack>
           </Center>
         </BackgroundImage>
