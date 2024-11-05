@@ -8,6 +8,7 @@ import {
   Center,
   Button,
   Stack,
+  Group,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery, useViewportSize } from "@mantine/hooks";
 import classes from "./tweens.module.css";
@@ -62,7 +63,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         onClick={close}
       >
         <BackgroundImage src={props.image} h={modalHeight} p="lg" radius="md">
-          <Flex h="100%" justify="flex-end" align="flex-end">
+          <Flex h="100%" w="100%" justify="flex-end" align="flex-end">
             <Image
               src="./public/minimize-2.svg"
               h="5%"
@@ -80,22 +81,20 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
               zIndex: 300,
             }}
           >
-            <Stack align="center" justify="center">
-              <Title
-                size={setTextSize()}
-                ta="left"
-                c="white"
-                p="xl"
-                lh="xl"
-                style={{
-                  textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
-                  pointerEvents: "none",
-                  userSelect: "none",
-                }}
-              >
-                {props.content}
-              </Title>
-            </Stack>
+            <Title
+              size={setTextSize()}
+              ta="left"
+              c="white"
+              p="xl"
+              lh="xl"
+              style={{
+                textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
+                pointerEvents: "none",
+                userSelect: "none",
+              }}
+            >
+              {props.content}
+            </Title>
           </Center>
         </BackgroundImage>
         <Overlay color="#000" backgroundOpacity={0.6} radius="md" />

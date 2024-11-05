@@ -34,7 +34,7 @@ export default function App() {
                   maxWidth: "100%",
                 }}
               >
-                <CarouselDisplay h={600} />
+                <CarouselDisplay h={500} />
               </div>
 
               <Divider my="md" />
