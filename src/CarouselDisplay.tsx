@@ -1,5 +1,5 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { DisplayCard } from "./CarouselCard";
 import classes from "./tweens.module.css";
@@ -36,12 +36,22 @@ interface Props {
 }
 
 export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
+  const carouselRef = useRef<any>();
   const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
   const GAP = 44;
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoaded(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   const autoplay = useRef(
     Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
   );
+
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -65,6 +75,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
 
   return (
     <Carousel
+      ref={carouselRef}
       withIndicators
       height={props.h}
       maw="100%"
@@ -77,7 +88,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       align="center"
       withControls={false}
       getEmblaApi={setEmbla}
-      className={classes.scale}
+      className={isLoaded ? classes.scale : classes.none}
       plugins={[autoplay.current]}
       onClick={(event) => {
         event.preventDefault();

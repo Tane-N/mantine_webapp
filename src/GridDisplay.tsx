@@ -32,7 +32,7 @@ export function GridDisplay() {
 
   return (
     <Box p={"xl"}>
-      <SimpleGrid spacing="xl" cols={{ base: 1, sm: 2, lg: 3 }}>
+      <SimpleGrid spacing="xl" cols={{ base: 1, sm: 2, lg: 4 }}>
         {displays}
       </SimpleGrid>
     </Box>
