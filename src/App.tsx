@@ -27,9 +27,16 @@ export default function App() {
         <AppShell.Main mt={50}>
           <Group justify="center">
             <Stack justify="flex-start" align="stretch" gap={0}>
-              <div id="home">
-                <CarouselDisplay h={500} />
+              <div
+                id="home"
+                style={{
+                  overflow: "hidden",
+                  maxWidth: "100%",
+                }}
+              >
+                <CarouselDisplay h={600} />
               </div>
+
               <Divider my="md" />
               <div id="projects">
                 <GridDisplay />
