@@ -36,23 +36,14 @@ interface Props {
 }
 
 export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
-  const carouselRef = useRef<any>();
-  const TRANSITION_DURATION = 1000;
   const [embla, setEmbla] = useState<Embla | null>(null);
   const GAP = 44;
-
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setIsLoaded(true), 1000);
-    return () => clearTimeout(timeout);
-  }, []);
 
   const autoplay = useRef(
     Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
   );
 
-  useAnimationOffsetEffect(embla, TRANSITION_DURATION);
+  useAnimationOffsetEffect(embla, 0);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!embla) return;
@@ -75,7 +66,6 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
 
   return (
     <Carousel
-      ref={carouselRef}
       withIndicators
       height={props.h}
       maw="100%"
@@ -88,10 +78,9 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       align="center"
       withControls={false}
       getEmblaApi={setEmbla}
-      className={isLoaded ? classes.scale : classes.none}
+      className={classes.scale}
       plugins={[autoplay.current]}
       onClick={(event) => {
-        event.preventDefault();
         handleClick(event);
       }}
     >
