@@ -5,6 +5,9 @@ import {
   createTheme,
   Divider,
   Flex,
+  Text,
+  Title,
+  Button,
 } from "@mantine/core";
 import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
@@ -13,7 +16,46 @@ import { SimpleFooter } from "./SimpleFooter.tsx";
 
 const theme = createTheme({
   fontFamily: "Nunito Sans, sans-serif",
+
   primaryColor: "orange",
+  defaultRadius: "md",
+  defaultGradient: {
+    from: "orange",
+    to: "red",
+    deg: 45,
+  },
+
+  components: {
+    Title: Title.extend({
+      defaultProps: {
+        c: "white",
+        style: {
+          textShadow: "0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.8)",
+          pointerEvents: "none",
+          userSelect: "none",
+        },
+      },
+    }),
+    Text: Text.extend({
+      defaultProps: {
+        c: "gray",
+        style: {
+          textShadow: "0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.8)",
+          pointerEvents: "none",
+          userSelect: "none",
+        },
+      },
+    }),
+    Button: Button.extend({
+      defaultProps: {
+        variant: "gradient",
+        style: {
+          textTransform: "capitalize",
+          textShadow: "0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.8)",
+        },
+      },
+    }),
+  },
 });
 
 export default function App() {
@@ -45,7 +87,7 @@ export default function App() {
             <Divider my="md" />
 
             <div id="contact">
-              <SimpleFooter h={100} pt={35} />
+              <SimpleFooter h={500} pt={35} />
             </div>
           </Flex>
         </AppShell.Main>

@@ -23,12 +23,10 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         <BackgroundImage src={props.image} h="100%" radius="md">
           <Flex h="100%" justify="space-between" align="flex-end" p="sm">
             <Text
-              c="white"
-              size="sm"
+              size="xs"
+              fs="italic"
+              tt="uppercase"
               style={{
-                textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
-                pointerEvents: "none",
-                userSelect: "none",
                 zIndex: 202,
               }}
             >

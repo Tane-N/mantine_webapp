@@ -41,43 +41,16 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
         }}
       >
         <Stack align="center" justify="center" w="80%">
-          <Title
-            size={25}
-            ta="center"
-            c="white"
-            style={{
-              textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
-              pointerEvents: "none",
-              userSelect: "none",
-            }}
-          >
+          <Title size={25} ta="center" tt="capitalize">
             {props.subheader}
           </Title>
-          <Title
-            size={50}
-            ta="center"
-            c="white"
-            style={{
-              textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
-              pointerEvents: "none",
-              userSelect: "none",
-            }}
-          >
+          <Title size={50} ta="center" tt="capitalize">
             {props.header}
           </Title>
-          <Title
-            size={10}
-            ta="center"
-            c="white"
-            style={{
-              textShadow: "0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8)",
-              pointerEvents: "none",
-              userSelect: "none",
-            }}
-          >
+          <Title size={10} ta="center" tt="capitalize">
             {props.description}
           </Title>
-          <Button variant="filled" w={120} className={classes.scale}>
+          <Button variant="gradient" w={120} className={classes.scale}>
             {props.buttontext}
           </Button>
         </Stack>

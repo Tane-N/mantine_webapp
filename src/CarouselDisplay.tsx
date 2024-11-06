@@ -28,8 +28,8 @@ const cards = [
     image: "./public/super_portfolio_ball.jpg",
     header: "Super Portfolio Ball",
     subheader: "Playable Portfolio",
-    description: "Find All the Trophies",
-    buttontext: "Play Now",
+    description: "Find All Trophies",
+    buttontext: "play now",
     buttonlink: "string",
   },
 ];
@@ -40,7 +40,8 @@ interface Props {
 
 export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   const [embla, setEmbla] = useState<Embla | null>(null);
-  const GAP = 44;
+  const SLIDE_GAP = 44;
+  const DEAD_ZONE_PERCENTAGE = 0.1;
 
   const autoplay = useRef(
     Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
@@ -54,16 +55,16 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
     const width = window.innerWidth;
     const clickX = event.clientX;
 
-    if (clickX > width / 2 + width * 0.1) {
+    if (clickX > width / 2 + width * DEAD_ZONE_PERCENTAGE) {
       embla.scrollNext();
-    } else if (clickX < width / 2 - width * 0.1) {
+    } else if (clickX < width / 2 - width * DEAD_ZONE_PERCENTAGE) {
       embla.scrollPrev();
     }
   };
 
   const slides = cards.map((card) => (
     <Carousel.Slide key={card.header}>
-      <DisplayCard {...card} centeroffset={-GAP / 2} />
+      <DisplayCard {...card} centeroffset={-SLIDE_GAP / 2} />
     </Carousel.Slide>
   ));
 
@@ -74,7 +75,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       maw="100%"
       w="100%"
       slideSize="90%"
-      slideGap={GAP}
+      slideGap={SLIDE_GAP}
       mt="xl"
       mb="xl"
       loop

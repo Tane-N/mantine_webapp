@@ -14,7 +14,7 @@ interface Props {
 
 export function StickyHeader(props: React.PropsWithoutRef<Props>) {
   const [active, setActive] = useState(links[0].link);
-  const [isScrolling, setIsScrolling] = useState(false);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
@@ -22,7 +22,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.scrollY - props.h;
 
-    setIsScrolling(true);
+    setIsAutoScrolling(true);
 
     window.scrollTo({
       top: offsetPosition,
@@ -30,19 +30,18 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
     });
 
     setTimeout(() => {
-      setIsScrolling(false);
+      setIsAutoScrolling(false);
     }, 500);
   };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (isScrolling) return;
+        if (isAutoScrolling) return;
 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            setActive(sectionId);
+            setActive(entry.target.id);
           }
         });
       },
@@ -67,7 +66,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
         }
       });
     };
-  }, [props.h, isScrolling]);
+  }, [props.h, isAutoScrolling]);
 
   const buttons = links.map((link) => (
     <Button
