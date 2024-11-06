@@ -12,7 +12,7 @@ import {
 import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
 import { GridDisplay } from "./GridDisplay.tsx";
-import { SimpleFooter } from "./SimpleFooter.tsx";
+import { ContactFooter } from "./ContactFooter.tsx";
 
 const theme = createTheme({
   fontFamily: "Nunito Sans, sans-serif",
@@ -87,7 +87,7 @@ export default function App() {
             <Divider my="md" />
 
             <div id="contact">
-              <SimpleFooter h={500} pt={35} />
+              <ContactFooter h={500} pt={35} />
             </div>
           </Flex>
         </AppShell.Main>

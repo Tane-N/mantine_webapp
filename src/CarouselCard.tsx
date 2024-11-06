@@ -27,6 +27,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 80%)"
           radius="md"
           style={{ pointerEvents: "none" }}
+          zIndex={1}
         />
       </div>
 
@@ -37,7 +38,7 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           width: "100%",
           top: 0,
           left: props.centeroffset,
-          zIndex: 201,
+          zIndex: 2,
         }}
       >
         <Stack align="center" justify="center" w="80%">
