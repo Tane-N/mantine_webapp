@@ -95,7 +95,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
         h={props.h}
         w="auto"
         fit="contain"
-        src="./logo_no_text.jpg"
+        src="logo_no_text.jpg"
         ml="xs"
       />
       <Group gap={5} justify="flex-end">

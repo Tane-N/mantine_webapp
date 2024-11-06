@@ -38,7 +38,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
             </Text>
             {props.link && (
               <Image
-                src="./public/external-link.svg"
+                src="external-link.svg"
                 h="10%"
                 w="auto"
                 style={{ zIndex: 2 }}

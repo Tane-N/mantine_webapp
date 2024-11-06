@@ -3,25 +3,25 @@ import { GridCard } from "./GridCard";
 
 const cards = [
   {
-    image: "./public/boing_odyssey.jpg",
+    image: "boing_odyssey.jpg",
     content: "Contraption building puzzle game",
     link: "https://store.steampowered.com/app/2587960/Boing_Odyssey/",
   },
 
   {
-    image: "./public/together_we_die.jpg",
+    image: "together_we_die.jpg",
     content: "Co-op horror shooter",
     link: "",
   },
 
   {
-    image: "./public/project_godspeed.jpg",
+    image: "project_godspeed.jpg",
     content: "Roguelike run-and-gun platformer",
     link: "https://teamdatavi.itch.io/project-godspeed",
   },
 
   {
-    image: "./public/coffer_quest.jpg",
+    image: "coffer_quest.jpg",
     content: "Management simulation",
     link: "",
   },

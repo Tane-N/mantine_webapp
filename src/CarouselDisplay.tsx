@@ -7,7 +7,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const cards = [
   {
-    image: "./public/camera_tenebris.jpg",
+    image: "camera_tenebris.jpg",
     header: "Camera Tenebris",
     subheader: "Latest Release",
     description: "Puzzles About Perspectives",
@@ -16,7 +16,7 @@ const cards = [
   },
 
   {
-    image: "./public/mimicologist_placeholder.jpg",
+    image: "mimicologist_placeholder.jpg",
     header: "Mimicologist",
     subheader: "Currently In Development",
     description: "Co-op Horror Deduction",
@@ -25,12 +25,12 @@ const cards = [
   },
 
   {
-    image: "./public/super_portfolio_ball.jpg",
+    image: "super_portfolio_ball.jpg",
     header: "Super Portfolio Ball",
     subheader: "Playable Portfolio",
     description: "Find All Trophies",
     buttontext: "play now",
-    buttonlink: "./Public/super_portfolio_ball/index.html",
+    buttonlink: "super_portfolio_ball/index.html",
   },
 ];
 

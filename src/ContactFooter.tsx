@@ -64,7 +64,7 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
     >
       <Container>
         <div>
-          <Image src="./public/logo_no_text.jpg" h={20} w="auto" />
+          <Image src="logo_no_text.jpg" h={20} w="auto" />
           <Text size="xs" c="dimmed">
             Build fully functional accessible web applications faster than ever
           </Text>
@@ -78,13 +78,13 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
 
         <Group gap={0} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <Image src="./public/mail.svg" h={20} w="auto" />
+            <Image src="mail.svg" h={20} w="auto" />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <Image src="./public/github.svg" h={20} w="auto" />
+            <Image src="github.svg" h={20} w="auto" />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <Image src="./public/linkedin.svg" h={20} w="auto" />
+            <Image src="linkedin.svg" h={20} w="auto" />
           </ActionIcon>
         </Group>
       </Container>
