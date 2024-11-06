@@ -1,4 +1,5 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
+import { useMediaQuery } from "@mantine/hooks";
 import React, { useRef } from "react";
 import { useState } from "react";
 import { DisplayCard } from "./CarouselCard";
@@ -40,6 +41,7 @@ interface Props {
 
 export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   const [embla, setEmbla] = useState<Embla | null>(null);
+  const isMobile = useMediaQuery("(max-width: 1279px)");
   const SLIDE_GAP = 44;
   const DEAD_ZONE_PERCENTAGE = 0.1;
 
@@ -82,7 +84,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       align="center"
       withControls={false}
       getEmblaApi={setEmbla}
-      className={classes.scale}
+      className={isMobile ? classes.none : classes.scale}
       plugins={[autoplay.current]}
       onClick={(event) => {
         handleClick(event);
