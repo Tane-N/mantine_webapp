@@ -19,6 +19,11 @@ interface Props {
   centeroffset: number;
 }
 export function DisplayCard(props: React.PropsWithoutRef<Props>) {
+  const handleClick = () => {
+    if (!props.buttonlink) return;
+    window.open(props.buttonlink);
+  };
+
   return (
     <Box style={{ height: "100%", overflow: "hidden" }}>
       <div style={{ position: "relative", height: "100%" }}>
@@ -51,9 +56,16 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           <Title size={10} ta="center" tt="capitalize">
             {props.description}
           </Title>
-          <Button variant="gradient" w={120} className={classes.scale}>
-            {props.buttontext}
-          </Button>
+          {props.buttonlink && (
+            <Button
+              variant="gradient"
+              w={120}
+              onClick={handleClick}
+              className={classes.scale}
+            >
+              {props.buttontext}
+            </Button>
+          )}
         </Stack>
       </Center>
     </Box>

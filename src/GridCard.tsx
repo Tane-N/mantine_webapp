@@ -11,13 +11,19 @@ interface Props {
 export function GridCard(props: React.PropsWithoutRef<Props>) {
   const ASPECT_RATIO = 16 / 9;
 
+  const handleClick = () => {
+    if (!props.link) return;
+    window.open(props.link);
+  };
+
   return (
     <div
       style={{
         position: "relative",
         height: "40%",
       }}
-      className={classes.scale}
+      className={props.link ? classes.scale : classes.none}
+      onClick={handleClick}
     >
       <AspectRatio ratio={ASPECT_RATIO}>
         <BackgroundImage src={props.image} h="100%" radius="md">
@@ -25,12 +31,14 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
             <Text size="xs" fs="italic" tt="uppercase" style={{ zIndex: 2 }}>
               {props.content}
             </Text>
-            <Image
-              src="./public/external-link.svg"
-              h="10%"
-              w="auto"
-              style={{ zIndex: 2 }}
-            />
+            {props.link && (
+              <Image
+                src="./public/external-link.svg"
+                h="10%"
+                w="auto"
+                style={{ zIndex: 2 }}
+              />
+            )}
           </Flex>
         </BackgroundImage>
         <Overlay

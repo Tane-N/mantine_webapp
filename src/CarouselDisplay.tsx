@@ -12,7 +12,7 @@ const cards = [
     subheader: "Latest Release",
     description: "Puzzles About Perspectives",
     buttontext: "Play Now",
-    buttonlink: "string",
+    buttonlink: "https://jorava.itch.io/camera-tenebris",
   },
 
   {
@@ -21,7 +21,7 @@ const cards = [
     subheader: "Currently In Development",
     description: "Co-op Horror Deduction",
     buttontext: "Learn More",
-    buttonlink: "string",
+    buttonlink: "",
   },
 
   {
@@ -30,7 +30,7 @@ const cards = [
     subheader: "Playable Portfolio",
     description: "Find All Trophies",
     buttontext: "play now",
-    buttonlink: "string",
+    buttonlink: "./Public/super_portfolio_ball/index.html",
   },
 ];
 

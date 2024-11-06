@@ -5,7 +5,7 @@ const cards = [
   {
     image: "./public/boing_odyssey.jpg",
     content: "Contraption building puzzle game",
-    link: "",
+    link: "https://store.steampowered.com/app/2587960/Boing_Odyssey/",
   },
 
   {
@@ -17,7 +17,7 @@ const cards = [
   {
     image: "./public/project_godspeed.jpg",
     content: "Roguelike run-and-gun platformer",
-    link: "",
+    link: "https://teamdatavi.itch.io/project-godspeed",
   },
 
   {
@@ -28,7 +28,14 @@ const cards = [
 ];
 
 export function GridDisplay() {
-  const displays = cards.map((card) => <GridCard {...card} key={card.image} />);
+  const cardsSortedByLink = cards.sort((a, b) => {
+    if (!a.link && b.link) return 1;
+    if (!b.link && a.link) return -1;
+    return 0;
+  });
+  const displays = cardsSortedByLink.map((card) => (
+    <GridCard {...card} key={card.image} />
+  ));
 
   return (
     <Box p={"xl"}>

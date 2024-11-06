@@ -31,7 +31,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
 
     setTimeout(() => {
       setIsAutoScrolling(false);
-    }, 500);
+    }, 800);
   };
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
       },
       {
         rootMargin: `-${props.h}px 0px 0px 0px`,
-        threshold: 0.6,
+        threshold: 0.7,
       }
     );
 
