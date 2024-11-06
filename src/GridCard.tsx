@@ -22,13 +22,18 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
         position: "relative",
         height: "40%",
       }}
-      className={props.link ? classes.scale : classes.none}
+      className={props.link ? classes.scale : classes.darken}
       onClick={handleClick}
     >
       <AspectRatio ratio={ASPECT_RATIO}>
         <BackgroundImage src={props.image} h="100%" radius="md">
           <Flex h="100%" justify="space-between" align="flex-end" p="sm">
-            <Text size="xs" fs="italic" tt="uppercase" style={{ zIndex: 2 }}>
+            <Text
+              size="xs"
+              fs="italic"
+              tt="uppercase"
+              style={{ zIndex: 2, userSelect: "none" }}
+            >
               {props.content}
             </Text>
             {props.link && (
