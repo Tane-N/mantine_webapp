@@ -39,6 +39,7 @@ const theme = createTheme({
     Text: Text.extend({
       defaultProps: {
         c: "gray",
+        fw: 500,
         style: {
           textShadow: "0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.8)",
           pointerEvents: "none",
@@ -87,7 +88,7 @@ export default function App() {
             <Divider my="md" />
 
             <div id="contact">
-              <ContactFooter h={500} pt={35} />
+              <ContactFooter mt={35} logoHeight={40} buttonHeight={28} />
             </div>
           </Flex>
         </AppShell.Main>

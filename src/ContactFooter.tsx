@@ -1,93 +1,74 @@
-import { Text, Container, ActionIcon, Group, Image, Box } from "@mantine/core";
+import { Text, Group, Image, Box, Flex } from "@mantine/core";
+import classes from "./tweens.module.css";
 
 interface Props {
-  h: number;
-  pt: number;
+  mt: number;
+  logoHeight: number;
+  buttonHeight: number;
 }
 
-const data = [
+const links = [
   {
-    title: "About",
-    links: [
-      { label: "Features", link: "#" },
-      { label: "Pricing", link: "#" },
-      { label: "Support", link: "#" },
-      { label: "Forums", link: "#" },
-    ],
+    image: "mail.svg",
+    link: "mailto:taneli.i.nieminen@gmail.com?subject=Inquiry%20Regarding%20Your%20Work",
   },
   {
-    title: "Project",
-    links: [
-      { label: "Contribute", link: "#" },
-      { label: "Media assets", link: "#" },
-      { label: "Changelog", link: "#" },
-      { label: "Releases", link: "#" },
-    ],
+    image: "github.svg",
+    link: "https://github.com/Tane-N",
   },
   {
-    title: "Community",
-    links: [
-      { label: "Join Discord", link: "#" },
-      { label: "Follow on Twitter", link: "#" },
-      { label: "Email newsletter", link: "#" },
-      { label: "GitHub discussions", link: "#" },
-    ],
+    image: "linkedin.svg",
+    link: "https://www.linkedin.com/in/taneli-nieminen-73a3092b9/",
   },
 ];
 
 export function ContactFooter(props: React.PropsWithoutRef<Props>) {
-  const groups = data.map((group) => {
-    const links = group.links.map((link, index) => (
-      <Text<"a">
-        key={index}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </Text>
-    ));
-
-    return (
-      <div key={group.title}>
-        <Text>{group.title}</Text>
-        {links}
-      </div>
-    );
-  });
+  const buttons = links.map((button) => (
+    <Image
+      key={button.link}
+      src={button.image}
+      h={props.buttonHeight}
+      w="auto"
+      onClick={() => {
+        window.open(button.link);
+      }}
+      className={classes.scaleL}
+    />
+  ));
 
   return (
     <Box
-      h={props.h}
-      mt={props.pt}
+      mt={props.mt}
+      p="xl"
       style={{ backgroundColor: "#000000", borderRadius: 8 }}
+      w="100%"
     >
-      <Container>
-        <div>
-          <Image src="logo_no_text.jpg" h={20} w="auto" />
-          <Text size="xs" c="dimmed">
-            Build fully functional accessible web applications faster than ever
-          </Text>
-        </div>
-        <div>{groups}</div>
-      </Container>
-      <Container>
-        <Text c="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
-        </Text>
-
-        <Group gap={0} justify="flex-end" wrap="nowrap">
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <Image src="mail.svg" h={20} w="auto" />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <Image src="github.svg" h={20} w="auto" />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <Image src="linkedin.svg" h={20} w="auto" />
-          </ActionIcon>
+      <Flex
+        direction="column"
+        align="flex-start"
+        w="100%"
+        p="xl"
+        gap="xs"
+        style={{ borderBottom: "solid rgb(30, 30, 30)" }}
+      >
+        <Group pt="xs" pb="xs">
+          <Image src="logo_no_text.jpg" h={props.logoHeight} w="auto" />
+          <Image src="logo_text_only.jpg" h={props.logoHeight} w="auto" />
         </Group>
-      </Container>
+        <Text c="rgb(90, 90, 90)" size="xs" maw={300} lh={1.5}>
+          Taneli Nieminen, professional game- and web-developer from Finland.
+          Don't hesitate to email me or message me on socials if you're
+          interested in my work.
+        </Text>
+      </Flex>
+      <Group justify="space-between" p="xl" w="100%">
+        <Text size="sm" c="rgb(90, 90, 90)">
+          © 2024 Tuonele. All rights reserved.
+        </Text>
+        <Group justify="flex-end" gap="xl">
+          {buttons}
+        </Group>
+      </Group>
     </Box>
   );
 }
