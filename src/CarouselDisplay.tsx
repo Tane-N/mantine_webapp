@@ -8,7 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const cards = [
   {
-    image: "camera_tenebris.jpg",
+    image: "camera_tenebris_carousel.jpg",
     alt: "Screenshot of a retro top-down horror game",
     tagline: "Latest Release",
     header: "Camera Tenebris",
@@ -18,7 +18,7 @@ const cards = [
   },
 
   {
-    image: "mimicologist_placeholder.jpg",
+    image: "mimicologist_placeholder_carousel.jpg",
     alt: "Stock image of a haunting interior",
     tagline: "Currently In Development",
     header: "Mimicologist",
@@ -28,7 +28,7 @@ const cards = [
   },
 
   {
-    image: "super_portfolio_ball.jpg",
+    image: "super_portfolio_ball_carousel.jpg",
     alt: "Screenshot of a low poly ball game",
     tagline: "Playable Portfolio",
     header: "Super Portfolio Ball",
