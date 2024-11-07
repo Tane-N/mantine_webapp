@@ -47,7 +47,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
       },
       {
         rootMargin: `-${props.h}px 0px 0px 0px`,
-        threshold: 0.7,
+        threshold: 0.5,
       }
     );
 
@@ -88,7 +88,6 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
     <Group
       justify="space-between"
       h={props.h}
-      px={5}
       style={{ backgroundColor: "#000000", borderRadius: 8 }}
     >
       <Image
@@ -99,7 +98,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
         ml="xs"
         alt="Company logo of a firelit cabin"
       />
-      <Group gap={5} justify="flex-end">
+      <Group gap={0} justify="flex-end">
         {buttons}
       </Group>
     </Group>
