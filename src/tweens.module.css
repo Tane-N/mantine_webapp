@@ -3,7 +3,7 @@
     transform: scale(1);
   }
   .scale {
-    transition: transform 150ms ease;
+    transition: transform 200ms ease;
   }
 
   .scale:hover {
@@ -15,7 +15,7 @@
   }
 
   .scaleL {
-    transition: transform 150ms ease;
+    transition: transform 200ms ease;
   }
 
   .scaleL:hover {
