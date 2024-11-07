@@ -1,35 +1,36 @@
-.scale {
-  transition: transform 150ms ease;
-}
+@media (hover: hover) {
+  .none {
+    transform: scale(1);
+  }
+  .scale {
+    transition: transform 150ms ease;
+  }
 
-.scale:hover {
-  transform: scale(1.05);
-}
+  .scale:hover {
+    transform: scale(1.05);
+  }
 
-.scale:active {
-  transform: scale(1);
-}
+  .scale:active {
+    transform: scale(1);
+  }
 
-.none {
-  transform: scale(1);
+  .scaleL {
+    transition: transform 150ms ease;
+  }
+
+  .scaleL:hover {
+    transform: scale(1.2);
+  }
+
+  .scaleL:active {
+    transform: scale(1);
+  }
 }
 
 .darken {
-  transition: filter 150ms ease;
-}
-
-.darken:hover {
   filter: brightness(0.6);
 }
 
-.scaleL {
-  transition: transform 150ms ease;
-}
-
-.scaleL:hover {
-  transform: scale(1.2);
-}
-
-.scaleL:active {
-  transform: scale(1);
+.darken:hover {
+  filter: brightness(0.4);
 }

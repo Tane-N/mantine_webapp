@@ -10,14 +10,17 @@ interface Props {
 const links = [
   {
     image: "mail.svg",
+    alt: "Icon that links to mail",
     link: "mailto:taneli.i.nieminen@gmail.com?subject=Inquiry%20Regarding%20Your%20Work",
   },
   {
     image: "github.svg",
+    alt: "Icon that links to Github",
     link: "https://github.com/Tane-N",
   },
   {
     image: "linkedin.svg",
+    alt: "Icon that links to LinkedIn",
     link: "https://www.linkedin.com/in/taneli-nieminen-73a3092b9/",
   },
 ];
@@ -27,6 +30,7 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
     <Image
       key={button.link}
       src={button.image}
+      alt={button.alt}
       h={props.buttonHeight}
       w="auto"
       onClick={() => {
@@ -52,8 +56,18 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
         style={{ borderBottom: "solid rgb(30, 30, 30)" }}
       >
         <Group pt="xs" pb="xs">
-          <Image src="logo_no_text.jpg" h={props.logoHeight} w="auto" />
-          <Image src="logo_text_only.jpg" h={props.logoHeight} w="auto" />
+          <Image
+            src="logo_no_text.jpg"
+            h={props.logoHeight}
+            w="auto"
+            alt="Company logo of a firelit cabin"
+          />
+          <Image
+            src="logo_text_only.jpg"
+            h={props.logoHeight}
+            w="auto"
+            alt="Logo of the company, name Tuonele"
+          />
         </Group>
         <Text c="rgb(90, 90, 90)" size="xs" maw={300} lh={1.5}>
           Taneli Nieminen, professional game- and web-developer from Finland.
@@ -61,7 +75,7 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
           interested in my work.
         </Text>
       </Flex>
-      <Group justify="space-between" p="xl" w="100%">
+      <Group justify="space-between" p="xl" w="100%" gap="xl">
         <Text size="sm" c="rgb(90, 90, 90)">
           © 2024 Tuonele. All rights reserved.
         </Text>

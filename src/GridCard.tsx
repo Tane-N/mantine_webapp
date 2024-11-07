@@ -1,9 +1,10 @@
-import { BackgroundImage, Overlay, Image, Flex, Text } from "@mantine/core";
+import { Center, Overlay, Image, Flex, Text } from "@mantine/core";
 import classes from "./tweens.module.css";
 import { AspectRatio } from "@mantine/core";
 
 interface Props {
   image: string;
+  alt: string;
   content: string;
   link: string;
 }
@@ -20,14 +21,29 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
     <div
       style={{
         position: "relative",
-        height: "40%",
+        height: "50%",
       }}
       className={props.link ? classes.scale : classes.darken}
       onClick={handleClick}
     >
       <AspectRatio ratio={ASPECT_RATIO}>
-        <BackgroundImage src={props.image} h="100%" radius="md">
-          <Flex h="100%" justify="space-between" align="flex-end" p="sm">
+        <Image src={props.image} h="100%" radius="md" alt={props.alt} />
+        <Center
+          style={{
+            position: "absolute",
+            height: "100%",
+            top: "100%",
+            left: 0,
+            zIndex: 2,
+          }}
+        >
+          <Flex
+            h="100%"
+            w="100%"
+            justify="space-between"
+            align="flex-end"
+            p="sm"
+          >
             <Text
               size="xs"
               fs="italic"
@@ -39,13 +55,15 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
             {props.link && (
               <Image
                 src="external-link.svg"
-                h="10%"
+                h="lg"
                 w="auto"
                 style={{ zIndex: 2 }}
+                alt="Icon to signify an external link"
               />
             )}
           </Flex>
-        </BackgroundImage>
+        </Center>
+
         <Overlay
           gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%)"
           radius="md"

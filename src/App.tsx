@@ -15,7 +15,7 @@ import { GridDisplay } from "./GridDisplay.tsx";
 import { ContactFooter } from "./ContactFooter.tsx";
 
 const theme = createTheme({
-  fontFamily: "Nunito Sans, sans-serif",
+  fontFamily: "Varela Round, sans-serif",
 
   primaryColor: "orange",
   defaultRadius: "md",
@@ -33,6 +33,7 @@ const theme = createTheme({
           textShadow: "0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.8)",
           pointerEvents: "none",
           userSelect: "none",
+          fontFamily: "Belanoshima, sans-serif",
         },
       },
     }),
@@ -76,7 +77,7 @@ export default function App() {
                 maxWidth: "100%",
               }}
             >
-              <CarouselDisplay h={500} />
+              <CarouselDisplay h={590} />
             </div>
 
             <Divider my="md" />
@@ -87,9 +88,9 @@ export default function App() {
 
             <Divider my="md" />
 
-            <div id="contact">
+            <footer id="contact">
               <ContactFooter mt={35} logoHeight={40} buttonHeight={28} />
-            </div>
+            </footer>
           </Flex>
         </AppShell.Main>
       </AppShell>

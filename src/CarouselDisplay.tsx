@@ -9,29 +9,32 @@ import Autoplay from "embla-carousel-autoplay";
 const cards = [
   {
     image: "camera_tenebris.jpg",
+    alt: "Screenshot of a retro top-down horror game",
+    tagline: "Latest Release",
     header: "Camera Tenebris",
-    subheader: "Latest Release",
     description: "Puzzles About Perspectives",
-    buttontext: "Play Now",
-    buttonlink: "https://jorava.itch.io/camera-tenebris",
+    buttonText: "Play Now",
+    buttonLink: "https://jorava.itch.io/camera-tenebris",
   },
 
   {
     image: "mimicologist_placeholder.jpg",
+    alt: "Stock image of a haunting interior",
+    tagline: "Currently In Development",
     header: "Mimicologist",
-    subheader: "Currently In Development",
     description: "Co-op Horror Deduction",
-    buttontext: "Learn More",
-    buttonlink: "",
+    buttonText: "Learn More",
+    buttonLink: "",
   },
 
   {
     image: "super_portfolio_ball.jpg",
+    alt: "Screenshot of a low poly ball game",
+    tagline: "Playable Portfolio",
     header: "Super Portfolio Ball",
-    subheader: "Playable Portfolio",
     description: "Find All Trophies",
-    buttontext: "play now",
-    buttonlink: "super_portfolio_ball/index.html",
+    buttonText: "play now",
+    buttonLink: "super_portfolio_ball/index.html",
   },
 ];
 
@@ -41,7 +44,6 @@ interface Props {
 
 export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   const [embla, setEmbla] = useState<Embla | null>(null);
-  const isMobile = useMediaQuery("(max-width: 1279px)");
   const SLIDE_GAP = 44;
   const DEAD_ZONE_PERCENTAGE = 0.1;
 
@@ -66,7 +68,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
 
   const slides = cards.map((card) => (
     <Carousel.Slide key={card.header}>
-      <DisplayCard {...card} centeroffset={-SLIDE_GAP / 2} />
+      <DisplayCard {...card} centerOffset={-SLIDE_GAP / 2} />
     </Carousel.Slide>
   ));
 
@@ -84,7 +86,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
       align="center"
       withControls={false}
       getEmblaApi={setEmbla}
-      className={isMobile ? classes.none : classes.scale}
+      className={classes.scale}
       plugins={[autoplay.current]}
       onClick={(event) => {
         handleClick(event);
