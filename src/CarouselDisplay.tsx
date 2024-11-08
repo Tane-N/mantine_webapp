@@ -48,7 +48,7 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
   const DEAD_ZONE_PERCENTAGE = 0.1;
 
   const autoplay = useRef(
-    Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
+    Autoplay({ delay: 3000, stopOnMouseEnter: false, stopOnInteraction: true })
   );
 
   useAnimationOffsetEffect(embla, 0);

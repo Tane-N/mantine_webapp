@@ -1,5 +1,5 @@
-# Mantine Vite template
+# React + Typerscript + Mantine + Vite
 
-Get started with the template by clicking `Use this template` button on the top of the page.
-
-[Documentation](https://mantine.dev/guides/vite/)
+Project template vite-min-template by mantinedev
+Icons from feathericons.com
+Fonts from google fonts
