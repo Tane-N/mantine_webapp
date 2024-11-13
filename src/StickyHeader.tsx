@@ -94,7 +94,7 @@ export function StickyHeader(props: React.PropsWithoutRef<Props>) {
         h={props.h}
         w="auto"
         fit="contain"
-        src="logo_no_text.jpg"
+        src="logo_no_text.webp"
         ml="xs"
         alt="Company logo of a firelit cabin"
       />

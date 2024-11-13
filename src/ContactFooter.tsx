@@ -57,13 +57,13 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
       >
         <Group pt="xs" pb="xs">
           <Image
-            src="logo_no_text.jpg"
+            src="logo_no_text.webp"
             h={props.logoHeight}
             w="auto"
             alt="Company logo of a firelit cabin"
           />
           <Image
-            src="logo_text_only.jpg"
+            src="logo_text_only.webp"
             h={props.logoHeight}
             w="auto"
             alt="Logo of the company, name Tuonele"

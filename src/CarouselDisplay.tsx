@@ -1,5 +1,4 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
-import { useMediaQuery } from "@mantine/hooks";
 import React, { useRef } from "react";
 import { useState } from "react";
 import { DisplayCard } from "./CarouselCard";
@@ -8,7 +7,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const cards = [
   {
-    image: "camera_tenebris_carousel.jpg",
+    image: "camera_tenebris_carousel.webp",
     alt: "Screenshot of a retro top-down horror game",
     tagline: "Latest Release",
     header: "Camera Tenebris",
@@ -18,7 +17,7 @@ const cards = [
   },
 
   {
-    image: "mimicologist_placeholder_carousel.jpg",
+    image: "mimicologist_placeholder_carousel.webp",
     alt: "Stock image of a haunting interior",
     tagline: "Currently In Development",
     header: "Mimicologist",
@@ -28,7 +27,7 @@ const cards = [
   },
 
   {
-    image: "super_portfolio_ball_carousel.jpg",
+    image: "super_portfolio_ball_carousel.webp",
     alt: "Screenshot of a low poly ball game",
     tagline: "Playable Portfolio",
     header: "Super Portfolio Ball",
