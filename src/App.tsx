@@ -8,6 +8,7 @@ import {
   Text,
   Title,
   Button,
+  Image,
 } from "@mantine/core";
 import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";

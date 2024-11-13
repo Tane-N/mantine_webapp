@@ -18,6 +18,7 @@ interface Props {
   buttonText: string;
   buttonLink: string;
   centerOffset: number;
+  preload: boolean;
 }
 export function DisplayCard(props: React.PropsWithoutRef<Props>) {
   const handleClick = () => {
@@ -34,6 +35,8 @@ export function DisplayCard(props: React.PropsWithoutRef<Props>) {
           h="100%"
           radius="md"
           alt={props.alt}
+          loading={props.preload ? "eager" : "lazy"}
+          fetchPriority={props.preload ? "high" : "low"}
         />
         <Overlay
           gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 80%)"

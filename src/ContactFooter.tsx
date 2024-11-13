@@ -37,6 +37,7 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
         window.open(button.link);
       }}
       className={classes.scaleL}
+      loading="lazy"
     />
   ));
 
@@ -61,12 +62,14 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
             h={props.logoHeight}
             w="auto"
             alt="Company logo of a firelit cabin"
+            loading="lazy"
           />
           <Image
             src="logo_text_only.webp"
             h={props.logoHeight}
             w="auto"
             alt="Logo of the company, name Tuonele"
+            loading="lazy"
           />
         </Group>
         <Text c="rgb(150, 150, 150)" size="sm" maw={300} lh={1.5}>

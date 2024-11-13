@@ -27,7 +27,13 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
       onClick={handleClick}
     >
       <AspectRatio ratio={ASPECT_RATIO}>
-        <Image src={props.image} h="100%" radius="md" alt={props.alt} />
+        <Image
+          src={props.image}
+          h="100%"
+          radius="md"
+          alt={props.alt}
+          loading="lazy"
+        />
         <Center
           style={{
             position: "absolute",
@@ -59,6 +65,7 @@ export function GridCard(props: React.PropsWithoutRef<Props>) {
                 w="auto"
                 style={{ zIndex: 2 }}
                 alt="Icon to signify an external link"
+                loading="lazy"
               />
             )}
           </Flex>

@@ -1,5 +1,5 @@
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useState } from "react";
 import { DisplayCard } from "./CarouselCard";
 import classes from "./tweens.module.css";
@@ -15,7 +15,6 @@ const cards = [
     buttonText: "Play Now",
     buttonLink: "https://jorava.itch.io/camera-tenebris",
   },
-
   {
     image: "mimicologist_placeholder_carousel.webp",
     alt: "Stock image of a haunting interior",
@@ -25,7 +24,6 @@ const cards = [
     buttonText: "Learn More",
     buttonLink: "",
   },
-
   {
     image: "super_portfolio_ball_carousel.webp",
     alt: "Screenshot of a low poly ball game",
@@ -52,6 +50,21 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
 
   useAnimationOffsetEffect(embla, 0);
 
+  useEffect(() => {
+    const firstImage = cards[0].image;
+
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = firstImage;
+
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!embla) return;
 
@@ -65,9 +78,13 @@ export function CarouselDisplay(props: React.PropsWithoutRef<Props>) {
     }
   };
 
-  const slides = cards.map((card) => (
+  const slides = cards.map((card, index) => (
     <Carousel.Slide key={card.header}>
-      <DisplayCard {...card} centerOffset={-SLIDE_GAP / 2} />
+      <DisplayCard
+        {...card}
+        centerOffset={-SLIDE_GAP / 2}
+        preload={index === 0}
+      />
     </Carousel.Slide>
   ));
 
