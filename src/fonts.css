@@ -5,7 +5,6 @@
   src: url("/fonts/belanosima-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -13,5 +12,4 @@
   src: url("/fonts/varelaround-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
