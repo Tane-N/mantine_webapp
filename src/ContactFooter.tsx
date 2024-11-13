@@ -69,14 +69,13 @@ export function ContactFooter(props: React.PropsWithoutRef<Props>) {
             alt="Logo of the company, name Tuonele"
           />
         </Group>
-        <Text c="rgb(90, 90, 90)" size="xs" maw={300} lh={1.5}>
+        <Text c="rgb(150, 150, 150)" size="sm" maw={300} lh={1.5}>
           Taneli Nieminen, professional game- and web-developer from Finland.
-          Don't hesitate to email me or message me on socials if you're
-          interested in my work.
+          Always happy to make new contacts.
         </Text>
       </Flex>
       <Group justify="space-between" p="xl" w="100%" gap="xl">
-        <Text size="sm" c="rgb(90, 90, 90)">
+        <Text size="sm" c="rgb(150, 150, 150)">
           © 2024 Tuonele. All rights reserved.
         </Text>
         <Group justify="flex-end" gap="xl">

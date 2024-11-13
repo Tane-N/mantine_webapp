@@ -13,9 +13,10 @@ import { StickyHeader } from "./StickyHeader.tsx";
 import { CarouselDisplay } from "./CarouselDisplay.tsx";
 import { GridDisplay } from "./GridDisplay.tsx";
 import { ContactFooter } from "./ContactFooter.tsx";
+import "./fonts.css";
 
 const theme = createTheme({
-  fontFamily: "Varela Round, sans-serif",
+  fontFamily: "varela_roundregular, sans-serif",
 
   primaryColor: "orange",
   defaultRadius: "md",
@@ -30,10 +31,10 @@ const theme = createTheme({
       defaultProps: {
         c: "white",
         style: {
+          fontFamily: "belanosimaregular, sans-serif",
           textShadow: "0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.8)",
           pointerEvents: "none",
           userSelect: "none",
-          fontFamily: "Belanoshima, sans-serif",
         },
       },
     }),
