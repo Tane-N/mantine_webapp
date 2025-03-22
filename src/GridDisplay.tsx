@@ -3,31 +3,31 @@ import { GridCard } from "./GridCard";
 
 const cards = [
   {
+    image: "house_of_mimics_capsule.webp",
+    alt: "Capsule art for a game called House of Mimics",
+    content: "Multiplayer anomaly horror",
+    link: "https://store.steampowered.com/app/3450150/House_of_Mimics/",
+  },
+
+  {
+    image: "camera_tenebris_capsule.webp",
+    alt: "Capsule art for a game called Camera Tenebris",
+    content: "Horror game about perspectives",
+    link: "https://jorava.itch.io/camera-tenebris",
+  },
+
+  {
     image: "boing_odyssey_capsule.webp",
-    alt: "Illustration of a ball getting punched by a boxing glove, along with the game title",
+    alt: "Capsule art for a game called Boing Odyssey",
     content: "Contraption building puzzle game",
     link: "https://store.steampowered.com/app/2587960/Boing_Odyssey/",
   },
 
   {
-    image: "together_we_die_capsule.webp",
-    alt: "Illustration of a solemn templar holding a shotgun, along with the game title",
-    content: "Co-op horror shooter",
-    link: "",
-  },
-
-  {
     image: "project_godspeed_capsule.webp",
-    alt: "Pixel art of a sci-fi warrior fighting a wraith, along with game title",
+    alt: "Capsule art for a game called Project Godspeed",
     content: "Roguelike run-and-gun platformer",
     link: "https://teamdatavi.itch.io/project-godspeed",
-  },
-
-  {
-    image: "coffer_quest_capsule.webp",
-    alt: "Render of a modest medieval house in a serene forest, along with game title",
-    content: "Management simulation",
-    link: "",
   },
 ];
 

@@ -7,21 +7,22 @@ import Autoplay from "embla-carousel-autoplay";
 
 const cards = [
   {
-    image: "camera_tenebris_carousel.webp",
-    alt: "Screenshot of a retro top-down horror game",
+    image: "house_of_mimics_carousel.webp",
+    alt: "Screenshot of a horror game",
     tagline: "Latest Release",
-    header: "Camera Tenebris",
-    description: "Puzzles About Perspectives",
+    header: "House of Mimics Demo",
+    description: "Multiplayer Anomaly Horror",
     buttonText: "Play Now",
-    buttonLink: "https://jorava.itch.io/camera-tenebris",
+    buttonLink:
+      "https://store.steampowered.com/app/3452950/House_of_Mimics_Demo/",
   },
   {
-    image: "mimicologist_placeholder_carousel.webp",
-    alt: "Stock image of a haunting interior",
-    tagline: "Currently In Development",
-    header: "Mimicologist",
-    description: "Co-op Horror Deduction",
-    buttonText: "Learn More",
+    image: "together_we_die_carousel.webp",
+    alt: "Capsule art for a fps game",
+    tagline: "In Development",
+    header: "Together We Die",
+    description: "Co-op Shooter",
+    buttonText: "",
     buttonLink: "",
   },
   {

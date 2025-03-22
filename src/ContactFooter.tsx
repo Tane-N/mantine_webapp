@@ -11,7 +11,7 @@ const links = [
   {
     image: "mail.svg",
     alt: "Icon that links to mail",
-    link: "mailto:taneli.i.nieminen@gmail.com?subject=Inquiry%20Regarding%20Your%20Work",
+    link: "mailto:taneli.i.nieminen@gmail.com?subject=Contact%20from%20your%20site",
   },
   {
     image: "github.svg",
